@@ -14,6 +14,7 @@ func TestCheck(t *testing.T) {
 		want bool
 	}{
 		{"Empty string is a palindrome", args{""}, true},
+		{"Single char is a palindrome", args{"z"}, true},
 		{"Non palindrome with odd len", args{"abcde"}, false},
 		{"Palindrome with odd len", args{"abcba"}, true},
 		{"Non palindrome with even len", args{"abcdef"}, false},
