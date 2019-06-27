@@ -1,0 +1,2 @@
+# palindrome
+sample go program
