@@ -43,6 +43,8 @@ func TestMakeFrom(t *testing.T) {
 		{"Empty string makes an empty palindrome, even=false", args{"", false}, ""},
 		{"Single char string makes 2 char string, even=true", args{"a", true}, "aa"},
 		{"Single char string makes 1 char string, even=false", args{"a", false}, "a"},
+		{"Makes palindrome with resulting even len", args{"abc", true}, "abccba"},
+		{"Makes palindrome with resulting odd len", args{"abc", false}, "abcba"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

@@ -15,11 +15,24 @@ func Check(s string) bool {
 // s is the input string
 // even is a flag that determines if the return string is of even size or odd, which in turn is determined by duplicating or not the last char of s.
 func MakeFrom(s string, even bool) string {
-	if len(s) == 1 {
+	var l = len(s)
+	if l == 0 {
+		return s
+	}
+	if l == 1 {
 		if even {
 			return s + s
 		}
 		return s
 	}
-	return ""
+	var buf = 1
+	if even {
+		buf = 0
+	}
+	var res = s
+	for index := buf; index < l; index++ {
+		var c = string(s[l-index-1])
+		res = res + c
+	}
+	return res
 }
