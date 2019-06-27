@@ -10,3 +10,16 @@ func Check(s string) bool {
 	}
 	return true
 }
+
+// MakeFrom returns a palindrome from the string in input.
+// s is the input string
+// even is a flag that determines if the return string is of even size or odd, which in turn is determined by duplicating or not the last char of s.
+func MakeFrom(s string, even bool) string {
+	if len(s) == 1 {
+		if even {
+			return s + s
+		}
+		return s
+	}
+	return ""
+}
